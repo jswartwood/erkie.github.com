@@ -1044,7 +1044,7 @@ if ( window.ActiveXObject ) {
 				window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
 		}
 	};
-	script.src = "/web/javascript/eeLib/excanvas.js";
+	script.src = "/web/javascript/eeLib/excanvas.min.js";
 	document.getElementsByTagName('head')[0].appendChild(script);
 }
 else window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
