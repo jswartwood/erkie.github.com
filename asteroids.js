@@ -569,11 +569,11 @@ function Asteroids() {
 	if ( typeof G_vmlCanvasManager != 'undefined' ) {
 		this.canvas = G_vmlCanvasManager.initElement(this.canvas);
 		if ( ! this.canvas.getContext ) {
-			alert("So... you're using IE?  Please join me at http://github.com/erkie/erkie.github.com if you think you can help");
+			//alert("So... you're using IE?  Please join me at http://github.com/erkie/erkie.github.com if you think you can help");
 		}
 	} else {
 		if ( ! this.canvas.getContext ) {
-			alert('This program does not yet support your browser. Please join me at http://github.com/erkie/erkie.github.com if you think you can help');
+			//alert('This program does not yet support your browser. Please join me at http://github.com/erkie/erkie.github.com if you think you can help');
 		}
 	}
 	
@@ -1013,14 +1013,15 @@ function Asteroids() {
 	setTimeout(updateFunc, 1000 / FPS);
 	
 	function destroy() {
-		removeEvent(document, 'keydown', eventKeydown);
+		window.location.href=window.location.href.replace(/\&mode\=asteroids|mode\=asteroids\&|\?mode\=asteroids/, "");
+		/*removeEvent(document, 'keydown', eventKeydown);
 		removeEvent(document, 'keypress', eventKeypress);
 		removeEvent(document, 'keyup', eventKeyup);
 		removeEvent(window, 'resize', eventResize);
 		isRunning = false;
 		removeStylesheet("ASTEROIDSYEAHSTYLES");
 		removeClass(document.body, 'ASTEROIDSYEAH');
-		this.gameContainer.parentNode.removeChild(this.gameContainer);
+		this.gameContainer.parentNode.removeChild(this.gameContainer);*/
 	};
 }
 
@@ -1043,7 +1044,7 @@ if ( window.ActiveXObject ) {
 				window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
 		}
 	};
-	script.src = "http://erkie.github.com/excanvas.js";
+	script.src = "/web/javascript/eeLib/excanvas.js";
 	document.getElementsByTagName('head')[0].appendChild(script);
 }
 else window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
