@@ -486,7 +486,7 @@ function Asteroids() {
 	};
 	
 	function setScore() {
-		that.points.innerHTML = window.ASTEROIDS.enemiesKilled * 10;
+		that.points.innerHTML = window.ASTEROIDS.enemiesKilled * 77;
 	};
 	
 	function hasOnlyTextualChildren(element) {
